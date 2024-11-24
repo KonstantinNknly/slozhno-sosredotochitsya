@@ -1,5 +1,420 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  font-family: var(--main-font, monospace);
+  background-color: var(--main-bg-color);
+  background-image: var(--bg-cover-image);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.decorated-zone {
+  position: relative;
+}
+
+.decorated-zone::before {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-inline-end: 1px solid var(--nav-color);
+  border-block-start: 1px solid var(--nav-color);
+  top: 10px;
+  right: 10px;
+}
+
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  inline-size: 25px;
+  block-size: 25px;
+  border-bottom: 1px solid var(--nav-color);
+  border-left: 1px solid var(--nav-color);
+  bottom: 10px;
+  left: 10px;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: 1fr min-content 1fr;
+  position: relative;
+  padding: 0px 10px;
+  block-size: 100vh;
+  min-block-size: 668px;
+  align-items: baseline;
+  gap: 55px;
+}
+
+@media (width >= 768px) {
+  .header {
+    padding: 20px;
+  }
+  .decorated-zone::before {
+    top: 20px;
+    right: 20px;
+  }
+  .decorated-zone::after {
+    bottom: 20px;
+    left: 20px;
+  }
+}
+
+.header__theme-menu {
+  display: grid;
+  padding: 8px;
+  padding-top: 75px;
+  justify-content: end;
+  align-items: center;
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu {
+    justify-self: center;
+    align-items: start;
+    padding-block-start: 0;
+  }
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+@media (width >= 768px) {
+  .header__theme-menu-list {
+    padding-block-start: 96px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__theme-menu-list {
+    flex-direction: row;
+    gap: 25px;
+    padding: 0px;
+  }
+}
+
+.header__theme-menu-button {
+  display: block;
+  font-family: var(--main-font, monospace);
+  color: var(--nav-color);
+  text-transform: lowercase;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: var(--main-text-size);
+}
+
+.header__theme-menu-button:active {
+  border: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  outline: var(--nav-hover-color);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  box-shadow: 0 1px 0 var(--link-shadow-color);
+}
+
+.header__rec {
+  position: absolute;
+  display: flex;
+  font-family: var(--main-font, monospace);
+  color: var(--decoration-color);
+  text-transform: uppercase;
+  right: 20px;
+  top: 10px;
+  line-height: 25px;
+  font-size: var(--main-text-size);
+  gap: var(--main-gap);
+  align-items: center;
+}
+
+@media (width >= 768px) {
+  .header__rec {
+    top: 20px;
+    right: 30px;
+  }
+}
+
+.header__rec::after {
+  content: '';
+  display: inline-block;
+  color: var(--decoration-color);
+  height: 9px;
+  width: 9px;
+  border-radius: 50%;
+  background-color: var(--decoration-color);
+  box-shadow: 0px 0px 4px 2px var(--decoration-color);
+}
+
+.header__title {
+  font-family: var(--main-font, monospace);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-weight: 700;
+  line-height: 82%;
+  color: var(--header-logo-color);
+  text-shadow: 4px 4px 0 var(--header-shadow-color);
+}
+
+@media (width >= 768px) {
+  .header__title {
+    margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+@media (width >= 1024px) {
+  .header__title {
+    margin-inline-start: -20px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+
+.title-decor {
+  font-family: var(--main-font, monospace);
+  color: var(--main-heading-color);
+  background-color: var(--decoration-color);
+  font-weight: 700;
+  font-size: var(--main-text-size);
+  line-height: 130%;
+}
+
+@media (width >= 768px) {
+  .header__text {
+    width: 50%;
+    justify-self: end;
+    margin-block-start: 107px;
+  }
+}
+
+@media (width >= 1024px) {
+  .header__text {
+    margin-block-start: 60px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  font-family: var(--main-font, monospace);
+  font-size: var(--main-text-size);
+  line-height: var(--main-line-height);
+  padding: 40px var(--main-gap); /*40px сверху  и 10 с боков*/
+}
+
+@media (width >= 768px) {
+  .main {
+    gap: 80px;
+    padding: 60px 20px;
+  }
+}
+
+.first__section,
+.second__section,
+.third__section {
+  display: grid;
+  grid-template-rows: minmax(min-content, max-content);
+  gap: 20px;
+}
+
+@media (width >= 768px) {
+  .first__section {
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: minmax(min-content, max-content);
+  }
+  .third__section {
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: minmax(min-content, max-content);
+  }
+}
+
+@media (width >= 1024px) {
+  .first__section {
+    gap: var(--main-gap);
+  }
+  .third__section {
+    gap: var(--main-gap);   
+  }
+}
+
+@media (width >= 1024px) {
+  .second__section .section__list {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(315px, 1fr));
+  }
+}
+
+.section__title {
+  color: var(--accent-color);
+  font-family: var(--main-font, monospace);
+  font-size: var(--main-text-size);
+  font-weight: 700;
+  line-height: var(--main-line-height);
+}
+.section__list-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+@media (width >= 768px) {
+  .section__title {
+    max-inline-size: 236px;
+  }
+}
+
+@media (width >= 1024px) {
+  .section__title {
+    max-inline-size: 312px;
+  }
+}
+
+.section__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.section__article-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--main-gap);
+}
+
+.section__text {
+  color: var(--main-text-color);
+  font-family: var(--main-font, monospace);
+  font-size: var(--main-text-size);
+  font-weight: 400;
+  line-height: var(--main-line-height);
+}
+
+.article__title {
+  font-family: var(--main-font, monospace);
+  background-color: var(--decoration-color);
+  color: var(--main-heading-color);
+  font-size: var(--main-text-size);
+  line-height: var(--main-line-height);
+  font-weight: 400;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  gap: 19px;
+}
+
+.word__link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--link-shadow-color);
+}
+
+.word__link:hover {
+  border-block-end: 1px solid var(--link-hover-color);
+}
+
+.word__link:focus {
+  border: 1px solid var(--link-hover-color);
+}
+
+.word__link:focus-visible {
+  outline: 1px solid var(--link-color);
+}
+
+.gallery__section {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%; 
+}
+
+@media (width >= 768px) {
+  .gallery__section {
+    display: grid;
+    gap: 20px;
+  }
+}
+
+.section__image-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sunset-img {
+  grid-area: sunset;
+}
+
+.ice-cream-img{
+  grid-area: icecream;
+}
+
+.tape-img{
+  grid-area: tape;
+}
+
+.books-img{
+  grid-area: books;
+}
+
+.street-img{
+  grid-area: street;
+}
+
+.gallery__item {
+  block-size: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: relative;
+  width: 100%; 
+}
+
+@media (width >= 768px) {
+  .section__image-items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, minmax(min-content, max-content));
+    gap: 20px;
+    grid-template-areas: 
+    "sunset sunset icecream"
+    "tape books icecream"
+    "tape street street";
+  }
+}
+
+.footer {
+  position: relative;
+  display: grid;
+  block-size: 100vh;
+  min-block-size: 668px;
+  padding: var(--main-gap);
+  align-items: center;
+}
+
+.footer__decor {
+  color: var(--footer-logo-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 2px 2px 0 var(--header-shadow-color);
+  font-family: var(--main-font, monospace);
+}
+@media (width >= 768px) {
+  .footer__decor {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+}
+@media (width >= 768px) {
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 }

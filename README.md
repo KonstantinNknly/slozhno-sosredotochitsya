@@ -1,0 +1,1 @@
+https://github.com/KonstantinNknly/slozhno-sosredotochitsya.git
