@@ -241,8 +241,8 @@
     gap: var(--main-gap);
   }
   .third__section {
-    gap: var(--main-gap);   
-  }
+    gap: var(--main-gap);
+}
 }
 
 @media (width >= 1024px) {
@@ -333,7 +333,7 @@ article {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  width: 100%; 
+  width: 100%;
 }
 
 @media (width >= 768px) {
@@ -353,19 +353,19 @@ article {
   grid-area: sunset;
 }
 
-.ice-cream-img{
+.ice-cream-img {
   grid-area: icecream;
 }
 
-.tape-img{
+.tape-img {
   grid-area: tape;
 }
 
-.books-img{
+.books-img {
   grid-area: books;
 }
 
-.street-img{
+.street-img {
   grid-area: street;
 }
 
@@ -375,7 +375,7 @@ article {
   object-position: center;
   display: block;
   position: relative;
-  width: 100%; 
+  width: 100%;
 }
 
 @media (width >= 768px) {
