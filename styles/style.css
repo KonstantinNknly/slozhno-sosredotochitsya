@@ -296,7 +296,7 @@
   }
 
   .section__what .section-article__list {
-    grid-column: 1 / -1; /
+    grid-column: 1 / -1;
   }
 }
 
