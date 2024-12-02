@@ -22,9 +22,9 @@
   --link-hover-color: #353430;
 }
 
-.page.theme_light .header__rec { 
-  content: none; 
-  display: none; 
+.page.theme_light .header__rec {
+  content: none;
+  display: none;
 }
 
 @media (prefers-color-scheme: light) {
