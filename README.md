@@ -1,1 +1,1 @@
-https://github.com/KonstantinNknly/slozhno-sosredotochitsya.git
+https://github.com/KonstantinNknly/slozhno-sosredotochitsya-fd.git
